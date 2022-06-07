@@ -1,5 +1,6 @@
 <?php
-include("../db_data.php");
+include($_SERVER["DOCUMENT_ROOT"]."/Office/db_data.php");
+include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 
 $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_database);
 $mysqli->set_charset("utf8");
@@ -45,12 +46,6 @@ function save($sql, $id=false, $msg=false, $type=false, $temp_val=NULL) {
 	}
 	
 	return $r;
-}
-
-$options_query = find("SELECT * FROM `options`");
-$options = [];
-foreach($options_query as $row){
-	$options[$row["name"]] = $row["value"];
 }
 
 ?>

@@ -92,7 +92,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 					</div>															
 				</div>
 				
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
                 
@@ -118,7 +118,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 					
                     <h3 class="menu-title"></h3>
 					<li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Уровни</a>
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Уровни</a>
                         <ul class="sub-menu children dropdown-menu">
 							<li><a href="/Office/b_0.php"> <i class="menu-icon fa fa-sitemap" style="margin-top: -3px"></i>Легкий Level 0</a></li>
                             <li><a href="/Office/b_1.php"> <i class="menu-icon fa fa-sitemap" style="margin-top: -3px"></i>Spec Level 1</a></li>
@@ -134,7 +134,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 						
 						
 						<li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Multi Boom</a>
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Multi Boom</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><a href="b_1.php"> <i class="menu-icon fa fa-sitemap" style="margin-top: -3px"></i>Level 1</a></li>
                             <li><a href="b_2.php"> <i class="menu-icon fa fa-sitemap" style="margin-top: -3px"></i>Level 2</a></li>
@@ -149,7 +149,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 						
 						
 					<li class="menu-item-has-children dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Infinity Boom</a>
+							<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Infinity Boom</a>
 							<ul class="sub-menu children dropdown-menu">
 								
 								<li><a href="/Office/infinity/index.php?package=1"> <i class="menu-icon fa fa-sitemap" style="margin-top: -3px"></i>Gold</a></li>
@@ -165,7 +165,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 							if($check_turbo):
 							?>
 						<li class="menu-item-has-children dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Turbo Boom</a>
+							<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Turbo Boom</a>
 							<ul class="sub-menu children dropdown-menu">
 
 								<li><a href="/Office/turboboom/index.php?level=1"> <i class="menu-icon fa fa-sitemap" style="margin-top: -3px"></i><?=$turbo_levels[1]["name"]?></a></li>
@@ -188,7 +188,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 							</ul>
 						</li>
 							<? else: ?>
-							<a href="#" data-toggle="modal" data-target="#buyTurbo"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Turbo Boom (Купить)</a>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#buyTurbo"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Turbo Boom (Купить)</a>
 							<? endif; ?>
 						</li>	
 						
@@ -266,7 +266,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="buyTurboLabel">Turbo Boom</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
@@ -274,7 +274,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 						<p style='color:#000'>Вы действительно хотите купить пакет?</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
 						<button type="button" class="button-buyturbo btn btn-primary">Купить</button>
 					</div>
 				</div>
@@ -286,7 +286,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="buyTypeMarketingLabel">Вид оплаты</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
@@ -296,7 +296,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 						<a href="?sub_m1=Вход&pay_type=bonus" class="btn btn-primary mt-4 px-10 py-5">Бонусы</a>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
 					</div>
 				</div>
 			</div>
@@ -306,7 +306,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="buyTypeMultiLabel">Вид оплаты</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
@@ -316,7 +316,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 						<a href="?sub_qq1=Вход&pay_type=bonus" class="btn btn-primary mt-4 px-10 py-5">Бонусы</a>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
 					</div>
 				</div>
 			</div>

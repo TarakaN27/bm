@@ -369,7 +369,7 @@ function showErr(code = false, err = false) {
 			else {
 				$('#summa-perevod').attr("disabled", true);
 				$("#perevod_summa_msg").html("");
-				$("#perevod_finish").html('Вы переводите <b>' + summa + ' Kzt</b> пользователю <b>' + username + '</b>.<br><br>' + '<button type="button" class="btn btn-info mr-2 mb-2" data-dismiss="modal" aria-label="Close">Отменить</button><input type="button" id="perevod_finish_btn" class="btn btn-success mb-2" value="Перевести">');
+				$("#perevod_finish").html('Вы переводите <b>' + summa + ' Kzt</b> пользователю <b>' + username + '</b>.<br><br>' + '<button type="button" class="btn btn-info mr-2 mb-2" data-bs-dismiss="modal" aria-label="Close">Отменить</button><input type="button" id="perevod_finish_btn" class="btn btn-success mb-2" value="Перевести">');
 			}
 			
 			

@@ -361,7 +361,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000001");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000001btn" id="100000001btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/gold_way_atyrau" data-id="100000001">Подписаться</button>
+											<button type="submit" name="100000001btn" id="100000001btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/gold_way_atyrau" data-id="100000001">Подписаться</button>
 											<? } ?>
 										</a>
                                         <a href="https://instagram.com/svoi_dom_atyrau777" style="text-align:center">
@@ -370,7 +370,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000002");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000002btn" id="100000002btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/svoi_dom_atyrau777" data-id="100000002">Подписаться</button>
+											<button type="submit" name="100000002btn" id="100000002btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/svoi_dom_atyrau777" data-id="100000002">Подписаться</button>
 											<? } ?>
                                         </a>
 										<a href="https://instagram.com/global_trend_company_atyrau" style="text-align:center">
@@ -379,7 +379,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000003");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000003btn" id="100000003btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/global_trend_company_atyrau" data-id="100000003">Подписаться</button>
+											<button type="submit" name="100000003btn" id="100000003btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/global_trend_company_atyrau" data-id="100000003">Подписаться</button>
 											<? } ?>
                                         </a>
                                     </div>
@@ -395,7 +395,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000004");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000004btn" id="100000004btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/citysmartclub777" data-id="100000004">Подписаться</button>
+											<button type="submit" name="100000004btn" id="100000004btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/citysmartclub777" data-id="100000004">Подписаться</button>
 											<? } ?>
                                         </a>
 										<a href="https://instagram.com/kupee.kz" style="text-align:center">
@@ -404,7 +404,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000005");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000005btn" id="100000005btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/kupee.kz" data-id="100000005">Подписаться</button>
+											<button type="submit" name="100000005btn" id="100000005btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/kupee.kz" data-id="100000005">Подписаться</button>
 											<? } ?>
                                         </a>
 										<a href="https://instagram.com/korkem_mg_kz7" style="text-align:center">
@@ -413,7 +413,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000006");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000006btn" id="100000006btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/korkem_mg_kz7" data-id="100000006">Подписаться</button>
+											<button type="submit" name="100000006btn" id="100000006btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/korkem_mg_kz7" data-id="100000006">Подписаться</button>
 											<? } ?>
                                         </a>
                                     </div>
@@ -429,7 +429,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000007");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000007btn" id="100000007btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/total_life_kz" data-id="100000007">Подписаться</button>
+											<button type="submit" name="100000007btn" id="100000007btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/total_life_kz" data-id="100000007">Подписаться</button>
 											<? } ?>
                                         </a>
 										<a href="https://instagram.com/aiym.8506" style="text-align:center">
@@ -438,7 +438,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000008");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000008btn" id="100000008btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/aiym.8506" data-id="100000008">Подписаться</button>
+											<button type="submit" name="100000008btn" id="100000008btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/aiym.8506" data-id="100000008">Подписаться</button>
 											<? } ?>
                                         </a>
 										<a href="https://aviavia.kz" style="text-align:center">
@@ -447,7 +447,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=100000009");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="100000009btn" id="100000009btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/aviaviakz" data-id="100000009">Подписаться</button>
+											<button type="submit" name="100000009btn" id="100000009btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/aviaviakz" data-id="100000009">Подписаться</button>
 											<? } ?>
                                         </a>
                                     </div>
@@ -464,7 +464,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=0");
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="0btn" id="0btn" class="btn btn-primary btn-sm subscr" data-target="https://www.youtube.com/channel/UCMSp55xVBHdLxzIhl7y30tw?view_as=subscriber" data-id="0">Подписаться</button>
+											<button type="submit" name="0btn" id="0btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://www.youtube.com/channel/UCMSp55xVBHdLxzIhl7y30tw?view_as=subscriber" data-id="0">Подписаться</button>
 											<? } ?>
                                         </a>
 										<div class="media-body">
@@ -498,7 +498,7 @@ function myFunction() {
 											$res = mysql_query("select id from subscriptions where user_id=".$row['user_id']." and subs_id=".$data[$i]['user_id']);
 											if (mysql_num_rows($res)>0) echo '<button type="submit" class="btn btn-primary btn-sm" disabled>Подписки&nbsp<i class="fa fa-check-circle"></i></button>';														else {											
 											?>
-											<button type="submit" name="<?= $data[$i]["user_id"]?>btn" id="<?= $data[$i]["user_id"]?>btn" class="btn btn-primary btn-sm subscr" data-target="https://instagram.com/<?= $data[$i]["insta"] ?>" data-id="<?= $data[$i]["user_id"]?>">Подписаться</button>
+											<button type="submit" name="<?= $data[$i]["user_id"]?>btn" id="<?= $data[$i]["user_id"]?>btn" class="btn btn-primary btn-sm subscr" data-bs-target="https://instagram.com/<?= $data[$i]["insta"] ?>" data-id="<?= $data[$i]["user_id"]?>">Подписаться</button>
 											<? } } ?>
 										</div>
                                     </div>

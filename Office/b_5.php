@@ -125,62 +125,38 @@ else {
 $color = ['#ffc7a8', '#9fe88b', '#99e8e7'];
 include("header.php");
 ?>
-<link rel="stylesheet" href="assets/css/Treant.css">
-<link rel="stylesheet" href="assets/css/collapsable.css">
-<style>
-	#my_avatar1 {
-		border-image: url("images/insta_border_sm.png");
-		border-image-slice:27 27 27 27;
-		border-image-width:27px 27px 27px 27px;
-		border-image-outset:0px 0px 0px 0px;
-		border-image-repeat:stretch stretch;
-	}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Структура</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            
-                        </ol>
+                        <h1>Дерево</h1>
                     </div>
                 </div>
             </div>
         </div>
-<script src="assets/js/raphael.js"></script>
-<script src="assets/js/Treant.js"></script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.easing.js"></script>
-        <div class="content mt-3" style="background: #fff">
+        <div class="content mt-3">
             <div class="animated fadeIn">
 
-                <div class="row">
-				<div class="col-lg-12" style="text-align: center">
-					
+                <div class="row">			
 					
 					<div class="col-lg-12" style="text-align: center">
 						<?php
 					if ($row['status'] <= 5) {
 					?>
-					<a href="#" data-toggle="modal" data-target="#buyTypeMarketing" class="btn btn-success"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Вход 1100000 тг</a><br><br>
+					<a href="#" data-bs-toggle="modal" data-bs-target="#buyTypeMarketing" class="btn btn-success"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Вход 1100000 тг</a><br><br>
 
 					<?php } ?>
-					<form method="post" action="b_5.php">
-						<input type="text" placeholder=" Логин партнера" name="partner">
-						<input type="submit" value="Поиск" name="sub_search" class="btn btn-success">
-					</form>	
+					<div class="col-lg-4 m-auto" style="text-align: center">
+						<form method="post" action="b_5.php">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Найти партнера" name="partner">
+								<input type="submit" class="form-control" value="Поиск" name="sub_search" class="btn btn-success">
+							</div>
+						</form>	
 					</div>
 					
-					<div class="col-lg-12" style="text-align: center">
-					<span class="badge badge-white">SILVER Level 5</span>
+					
+					<span class="badge badge-success mt-2">SILVER Level 5</span>
 					<div class="chart01" id="collapsable-example1" style="color: #111;"></div>
 
 <?php
@@ -336,25 +312,10 @@ $url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].dirname($_SERVER['
 	<? endforeach; ?>
 </table>
 <a href="all_sponsors.php?username=<?=$row['login']?>&table=<?=$m?>" class="badge badge-success sponsors">Масштабировать</a>
+					</div>
 				</div>
 			</div>
-			</div>
-                                        </div><!-- .animated -->
-                                    </div><!-- .content -->
-                                </div><!-- /#right-panel -->
-                                <!-- Right Panel -->
-
-
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-        <!--  Chart js -->
-    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="assets/js/widgets.js"></script>
-</body>
-</html>
+		</div><!-- .animated -->
+	</div><!-- .content -->
+	
+<? include("footer.php"); ?>

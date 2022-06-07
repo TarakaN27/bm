@@ -1,6 +1,5 @@
 <?php
-//$cities = array('Выберите страну','Казахстан','Узбекистан','Россия', 'Монголия');
-$liders = array('Olzha888', 'Millionersha777', 'Bankir888', 'Admin1', 'sholpan81', 'Umigold', '€€88', 'Magnat789');
+
 include($_SERVER["DOCUMENT_ROOT"]."/Office/global.php");
 
 $my_fio = mysql_query("SELECT fio, role FROM users WHERE login='".$_SESSION["login"]."'");
@@ -32,6 +31,7 @@ if(!$my_fio){
 	<link href="/Office/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/Office/assets/css/app.css" rel="stylesheet">
 	<link href="/Office/assets/css/icons.css" rel="stylesheet">
+	<link href="/Office/assets/css/style.css" rel="stylesheet">
 	<title>Boom Market</title>
 	<meta name="description" content="Маркетинг план. Натуральные продукции">
 	<meta name="keywords" content="маркетинг, натуральные продукции, Казахстан, Алматы, Атырау, Нур-Султан, Шымкент, Караганды, Павлодар, Актобе, Актау, Тараз, Уральск, Кокшетау, Семей, Оскемен">
@@ -144,7 +144,7 @@ if(!$my_fio){
 							<? endif; ?>
 						</ul>
 					<? else: ?>
-						<a href="#" data-toggle="modal" data-target="#buyTurbo">
+						<a href="#" data-bs-toggle="modal" data-bs-target="#buyTurbo">
 							<div class="parent-icon"><i class="bx bx-cookie"></i></div>
 							<div class="menu-title">Turbo Boom (Купить)</div>
 						</a>
@@ -232,7 +232,7 @@ if(!$my_fio){
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="buyTurboLabel">Turbo Boom</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
@@ -240,7 +240,7 @@ if(!$my_fio){
 						<p style='color:#000'>Вы действительно хотите купить пакет?</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
 						<button type="button" class="button-buyturbo btn btn-primary">Купить</button>
 					</div>
 				</div>
@@ -252,7 +252,7 @@ if(!$my_fio){
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="buyTypeMarketingLabel">Вид оплаты</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
@@ -262,7 +262,7 @@ if(!$my_fio){
 						<a href="?sub_m1=Вход&pay_type=bonus" class="btn btn-primary mt-4 px-10 py-5">Бонусы</a>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
 					</div>
 				</div>
 			</div>
@@ -272,7 +272,7 @@ if(!$my_fio){
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="buyTypeMultiLabel">Вид оплаты</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
@@ -282,7 +282,7 @@ if(!$my_fio){
 						<a href="?sub_qq1=Вход&pay_type=bonus" class="btn btn-primary mt-4 px-10 py-5">Бонусы</a>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
 					</div>
 				</div>
 			</div>

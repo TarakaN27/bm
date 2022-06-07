@@ -74,18 +74,7 @@ else {
 $color = ['#ffc7a8', '#9fe88b', '#99e8e7'];
 include("../header.php");
 ?>
-<link rel="stylesheet" href="../assets/css/Treant.css">
-<link rel="stylesheet" href="../assets/css/collapsable.css">
-<style>
-	#my_avatar1 {
-		border-image: url("../images/insta_border_sm.png");
-		border-image-slice:27 27 27 27;
-		border-image-width:27px 27px 27px 27px;
-		border-image-outset:0px 0px 0px 0px;
-		border-image-repeat:stretch stretch;
-	}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
         <!--<div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -95,12 +84,9 @@ include("../header.php");
                 </div>
             </div>
         </div>-->
-<script src="../assets/js/raphael.js"></script>
-<script src="../assets/js/Treant.js"></script>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.easing.js"></script>
-        <div class="content infinity mt-3" style="background: #fff">
-            <div class="animated fadeIn">
+        <div class="content infinity mt-3">
+            <div class="card">
+				<div class="card-body py-4">
 
                 <div class="row">
 				<div class="col-lg-12" style="text-align: center">
@@ -111,20 +97,22 @@ include("../header.php");
 								<p class="col-lg-6 col-sm-12">Пакет: <?=$packages[$row["infinity_package"]-1]["name"]?></p>
 								<? if($row["infinity_package"]): ?>
 									<? $disabled = $row["infinity_package"] == 4 ? "disabled": ""; ?>
-									<a href="buy.php" class="body btn btn-primary col-lg-6 col-sm-12 <?=$disabled?>">Улучшить</a>
+									<a href="buy.php" class="body btn btn-light col-lg-6 col-sm-12 <?=$disabled?>">Улучшить</a>
 								<? else: ?>
-									<a href="buy.php" class="body btn btn-primary col-lg-6 col-sm-12">Купить</a>
+									<a href="buy.php" class="body btn btn-light col-lg-6 col-sm-12">Купить</a>
 								<? endif; ?>
 							</div>
 						</div>
 					</div>
 					
-					<div class="col-lg-12" style="text-align: center">
-					<form method="post">
-						<input type="text" placeholder="Найти партнера" name="partner">
-						<input type="submit" value="Поиск" name="sub_search" class="btn btn-success">
-					</form>
-							<span class="badge badge-red">Внимание, покупка уровня доступна раз в 5 минут!</span>
+					<div class="col-lg-4 m-auto" style="text-align: center">
+						<form method="post">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Найти партнера" name="partner">
+								<input type="submit" class="form-control" value="Поиск" name="sub_search" class="btn btn-success">
+							</div>
+						</form>
+						<span class="badge badge-red">Внимание, покупка уровня доступна раз в 5 минут!</span>
 					</div>
 					
 						<a href="?action=change-float&float=left&package=<?=$_GET["package"]?>" class="badge <?=$my_package["left"]?> mr-10">Слева</a>
@@ -310,27 +298,10 @@ $url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].dirname($_SERVER['
 	<? endforeach; ?>
 </table>
 <a href="all_sponsors.php?id=<?=$row['id']?>&table=<?=$package?>" class="badge badge-success sponsors">Масштабировать</a>
-						
-
+					</div>
 				</div>
-					
 			</div>
-                                        </div><!-- .animated -->
-                                    </div><!-- .content -->
-                                </div><!-- /#right-panel -->
-                                <!-- Right Panel -->
-
-
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="../vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/main.js?ver=4"></script>
-        <!--  Chart js -->
-    <script src="../vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="../assets/js/widgets.js"></script>
-</body>
-</html>
+		</div><!-- .animated -->
+	</div><!-- .content -->
+	
+<? include("../footer.php"); ?>

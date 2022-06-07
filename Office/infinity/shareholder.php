@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+include("../db_connect.php");
 include("functions.php");
 include("inf-functions.php");
 date_default_timezone_set('Asia/Almaty');
@@ -22,7 +23,8 @@ if(isset($my["login"]) && $my["infinity_package"]==4){
 	if(strtotime($date_start)<strtotime(date("Y-m-01 00:00:00"))) {$date_start = date("Y-m-01 00:00:00");}
 	
 	$date_end = date('Y-m-d H:i:s',strtotime(date('Y-m-01 23:59:59',strtotime('next month')).'-1 day'));
-	$history_pv = find("SELECT history.*, u.login, f.login as user_from FROM `history` LEFT JOIN `users` as u ON history.user_id=u.id LEFT JOIN `users` as f ON f.id=history.from WHERE `type`='add-inf-pv' AND `user_id` IN (".$ids_str.") AND `date` between '".$date_start."' and '".$date_end."' GROUP BY history.date ORDER BY id DESC");
+	$history_pv = find("SELECT history.*, u.login, f.login as user_from FROM `history` LEFT JOIN `users` as u ON history.user_id=u.id LEFT JOIN `users` as f ON f.id=history.from WHERE `type`='add-inf-pv' AND `user_id` IN (".$ids_str.") AND `date` between '".$date_start."' and '".$date_end."' GROUP BY history.`date` ORDER BY `id` DESC");
+	var_dump($history_pv);
 	$count_pv = 0;
 	$count_all = 0;
 	$arr_shareholder = [];
@@ -62,12 +64,6 @@ if(isset($my["login"]) && $my["infinity_package"]==4){
 }
 include("../header.php");
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../assets/js/raphael.js"></script>
-<script src="../assets/js/Treant.js"></script>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.easing.js"></script>
-
 	<div class="content mt-5">
 		<div class="animated fadeIn">
 			<div class="col-lg-12" style="text-align: center">
@@ -279,22 +275,8 @@ include("../header.php");
 			</div>
 		</div><!-- .animated -->
 	</div><!-- .content -->
-</div>
-<!-- Right Panel -->
 
 
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="../vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-        <!--  Chart js -->
-    <script src="../vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="../assets/js/widgets.js"></script>
-</body>
-</html>
+<? include("../footer.php"); ?>
 
 

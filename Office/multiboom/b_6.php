@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("db_connect.php");
+include("../db_connect.php");
 include "smsc_api.php";
 include("b_func.php");
 date_default_timezone_set('Asia/Almaty');
@@ -118,56 +118,34 @@ else {
 	die();
 }
 $color = ['#ffc7a8', '#9fe88b', '#99e8e7'];
-include("header.php");
+include("../header.php");
 ?>
-<link rel="stylesheet" href="assets/css/Treant.css">
-<link rel="stylesheet" href="assets/css/collapsable.css">
-<style>
-	#my_avatar1 {
-		border-image: url("images/insta_border_sm.png");
-		border-image-slice:27 27 27 27;
-		border-image-width:27px 27px 27px 27px;
-		border-image-outset:0px 0px 0px 0px;
-		border-image-repeat:stretch stretch;
-	}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Структура</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            
-                        </ol>
+                        <h1>Дерево</h1>
                     </div>
                 </div>
             </div>
         </div>
-<script src="assets/js/raphael.js"></script>
-<script src="assets/js/Treant.js"></script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.easing.js"></script>
-        <div class="content mt-3" style="background: #fff">
-            <div class="animated fadeIn">
+        <div class="content mt-3">
+            <div class="card">
+				<div class="card-body py-4">
 
                 <div class="row">
 				<div class="col-lg-12" style="text-align: center">
 					
-					<div class="col-lg-12" style="text-align: center">
-					<form method="post" action="b_6.php">
-						<input type="text" placeholder=" Логин партнера" name="partner">
-						<input type="submit" value="Поиск" name="sub_search" class="btn btn-success">
-					</form>
+					<div class="col-lg-4 m-auto" style="text-align: center">
+						<form method="post" action="b_6.php">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Найти партнера" name="partner">
+								<input type="submit" class="form-control" value="Поиск" name="sub_search" class="btn btn-success">
+							</div>
+						</form>
 					</div>
-					<div class="col-lg-12" style="text-align: center">
-					<span class="badge badge-white">Level 6</span>
+
+					<span class="badge badge-success mt-2">Level 6</span>
 					<div class="chart01" id="collapsable-example1" style="color: #111;"></div>
 
 <?php
@@ -323,217 +301,10 @@ $url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].dirname($_SERVER['
 	<? endforeach; ?>
 </table>
 <a href="../all_sponsors.php?username=<?=$row['login']?>&table=<?=$m?>" class="badge badge-success sponsors">Масштабировать</a>
-				</div>
-			</div>
-			</div>
-                                        </div><!-- .animated -->
-                                    </div><!-- .content -->
-                                </div><!-- /#right-panel -->
-                                <!-- Right Panel -->
-
-
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-        <!--  Chart js -->
-    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="assets/js/widgets.js"></script>
-</body>
-</html><?php
-session_start();
-include("db_connect.php");
-include "smsc_api.php";
-date_default_timezone_set('Asia/Almaty');
-
-$result = mysql_query("select * from users where login='".$_SESSION['login']."'");
-
-if (mysql_num_rows($result) != 0) {
-	$row = mysql_fetch_array($result);
-    
-    if (isset($_POST['sub_search'])) {
-		$login = mysql_escape_string($_POST['partner']);
-		$result_s = mysql_query("select * from users where login='".$login."' and id>".$row['id']);
-		if (mysql_num_rows($result_s) > 0 && $login != 'admin') {
-			$row = mysql_fetch_array($result_s);	
-		}
-	}
-    
-}
-else {
-	header("Location: ../index.php");
-	die();
-}
-$color = ['#ffc7a8', '#9fe88b', '#99e8e7'];
-include("header.php");
-?>
-<link rel="stylesheet" href="assets/css/Treant.css">
-<link rel="stylesheet" href="assets/css/collapsable.css">
-<style>
-	#my_avatar1 {
-		border-image: url("images/insta_border_sm.png");
-		border-image-slice:27 27 27 27;
-		border-image-width:27px 27px 27px 27px;
-		border-image-outset:0px 0px 0px 0px;
-		border-image-repeat:stretch stretch;
-	}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Структура</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li><a href="#">Личный кабинет</a></li>
-                            <li><a href="#">Операции</a></li>
-                            <li class="active">Структура</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-<script src="assets/js/raphael.js"></script>
-<script src="assets/js/Treant.js"></script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.easing.js"></script>
-        <div class="content mt-3" style="background: #c70a0d">
-            <div class="animated fadeIn">
-
-                <div class="row">
-				<div class="col-lg-12" style="text-align: center">
-					<div class="col-lg-12" style="text-align: center">
-					<form method="post" action="b_6.php">
-						<input type="text" placeholder="Логин партнера" name="partner">
-						<input type="submit" value="Поиск" name="sub_search" class="btn btn-warning">
-					</form>
 					</div>
-					<div class="col-lg-12" style="text-align: center">
-					<span class="badge badge-success">Level 6</span>
-					<div class="chart01" id="collapsable-example1" style="color: #111;"></div>
-
-<script>
-
-		var chart_config1 = {
-        chart: {
-            container: "#collapsable-example1",
-
-            animateOnInit: true,
-
-            node: {
-                collapsable: true
-            },
-            animation: {
-                nodeAnimation: "easeOutBounce",
-                nodeSpeed: 700,
-                connectorsAnimation: "bounce",
-                connectorsSpeed: 700
-            }
-        },
-<?php
-$i = 0;
-$master = $row['login'];
-$flag = ['','',''];
-$result2 = mysql_query("select * from m7 where user_login='".$master."' order by type asc");
-if (mysql_num_rows($result2) != 0) {
-		$row2 = mysql_fetch_array($result2);
-		//$index = $row2['id'];
-        ?>nodeStructure: {
-			<?php
-			if (is_file('images/avatar/'.$row2['user_id'].'.jpg')) $avatar = 'images/avatar/'.$row2['user_id'].'.jpg'; else $avatar='images/user_new.png';
-			?>
-            image: "<?= $avatar ?>",
-			text: {
-				name: "<?= $master ?>",
-				contact: "<?= $row['phone'] ?>"
-			},
-
-	<?php
-
-	$result3 = mysql_query("select * from m7 where sponsor_login='".$master."' order by type asc");
-	if (mysql_num_rows($result3) != 0) {
-
-		?>
-		children: [
-
-		<?php
-		while ($row3 = mysql_fetch_array($result3)) {
-			$i++;
-			?>
-			{
-			<?php
-			if (is_file('images/avatar/'.$row3['user_id'].'.jpg')) $avatar = 'images/avatar/'.$row3['user_id'].'.jpg'; else $avatar='images/user_new.png';
-			?>
-            image: "<?= $avatar ?>",
-			text: {
-				name: "<?= $row3['user_login'] ?>",
-				contact: "<?= $row3['phone'] ?>"
-			},
-			<?php
-			$master1 = $row3['user_login'];
-			//$index1 = $row3['id'];
-			$result4 = mysql_query("select * from m7 where sponsor_login='".$master1."' order by type asc");
-			if (mysql_num_rows($result4) != 0) {
-
-			?>
-			children: [
-
-			<?php
-			while ($row4 = mysql_fetch_array($result4)) {
-				$i++;
-				?>
-				{
-				<?php
-				if (is_file('images/avatar/'.$row4['user_id'].'.jpg')) $avatar = 'images/avatar/'.$row4['user_id'].'.jpg'; else $avatar='images/user_new.png';
-				?>
-				image: "<?= $avatar ?>",
-				text: {
-				name: "<?= $row4['user_login'] ?>",
-				contact: "<?= $row4['phone'] ?>"
-				},
-				},
-				<?php } ?>
-			]
-			<?php }  ?>
-			},
-		  <?php }  ?>
-		]
-	<?php } ?>
-
-	}
-<?php } ?>
-    };
-tree = new Treant( chart_config1 );
-</script>
 				</div>
 			</div>
-			</div>
-                                        </div><!-- .animated -->
-                                    </div><!-- .content -->
-                                </div><!-- /#right-panel -->
-                                <!-- Right Panel -->
-
-
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-        <!--  Chart js -->
-    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="assets/js/widgets.js"></script>
-</body>
-</html>
+		</div><!-- .animated -->
+	</div><!-- .content -->
+	
+<? include("../footer.php"); ?>
