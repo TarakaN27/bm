@@ -2,7 +2,7 @@
 session_start();
 
 include("db_data.php");
-
+include("db_connect.php");
 $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_database);
 $mysqli->set_charset("utf8");
 
@@ -100,17 +100,15 @@ else {
 include('header.php');
 
 ?>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Билеты</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<div class="breadcrumbs">
+		<div class="col-sm-4">
+			<div class="page-header float-left">
+				<div class="page-title">
+					<h1>Билеты</h1>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <div class="content mt-3">
 	<div class="animated fadeIn">
@@ -119,7 +117,7 @@ include('header.php');
 					<div class="row">
 						<div class="col-12 d-flex justify-content-between">
 							<h6><?=$current_page["name"]?></h6>
-							<a href="?action=open-all" class="btn btn-success mb-0 px-3 py-1 align-self-center">Открыть все сразу</a>
+							<a href="?action=open-all" class="btn btn-light mb-2 px-3 py-1 align-self-center">Открыть все сразу</a>
 						</div>
 					</div>
 				</div>
@@ -128,10 +126,10 @@ include('header.php');
 						<table class="table align-items-center mb-0">
 							<thead>
 								<tr>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">ID билета</th>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Название розыгрыша</th>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Дата покупки</th>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Действие</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">ID билета</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">Название розыгрыша</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">Дата покупки</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">Действие</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -187,11 +185,11 @@ include('header.php');
 						<table class="table align-items-center mb-0">
 							<thead>
 								<tr>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">ID билета</th>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Название розыгрыша</th>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Дата покупки</th>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Приз</th>
-									<th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Действие</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">ID билета</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">Название розыгрыша</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">Дата покупки</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">Приз</th>
+									<th class="text-center text-uppercase text-light text-xxs font-weight-bolder">Действие</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -251,18 +249,5 @@ include('header.php');
 			</div>
 	</div><!-- .animated -->
 </div><!-- .content -->
-</div><!-- /#right-panel -->
-<!-- Right Panel -->
 
-
-<script src="vendors/jquery/dist/jquery.min.js"></script>
-<script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-
-<script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
-</html>
+<? include("footer.php"); ?>

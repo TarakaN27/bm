@@ -21,9 +21,22 @@
 	<script src="/Office/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 	<script src="/Office/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
 	<script src="/Office/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
-	<script src="/Office/assets/js/swal.js"></script>
+	<script src="/Office/assets/js/sweetalert2.min.js"></script>
 	<script src="/Office/assets/js/app.js"></script>
 	<script src="/Office/assets/js/main.js"></script>
+	
+	
+	<script>
+		$(document).ready(function() {
+			$('.bootstrap-data-table').DataTable({
+				"aaSorting": [[ 4, "desc" ]]
+			});
+			$('.bootstrap-data-table-withdraw').DataTable({
+				"aaSorting": [[ 6, "desc" ]]
+			});
+		  } );
+	</script>
+	
 </body>
 
 </html>

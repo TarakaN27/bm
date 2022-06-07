@@ -8,11 +8,15 @@ if(!$my_fio){
 	$my_fio = findOne("SELECT fio, role FROM users WHERE login='".$_SESSION["login"]."'");
 }
 
+if (is_file($_SERVER["DOCUMENT_ROOT"].'/Office/images/avatar/'.$_SESSION["id"].'.jpg')) {
+	$avatar = '/Office/images/avatar/'.$_SESSION["id"].'.jpg'; 
+} else {
+	$avatar='/Office/images/ava3.png';
+}
+
 ?>
 
-<!doctype html>
-<html lang="en">
-
+<html lang="ru">
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -31,6 +35,7 @@ if(!$my_fio){
 	<link href="/Office/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/Office/assets/css/app.css" rel="stylesheet">
 	<link href="/Office/assets/css/icons.css" rel="stylesheet">
+	<link href="/Office/assets/css/sweetalert2.min.css" rel="stylesheet">
 	<link href="/Office/assets/css/style.css" rel="stylesheet">
 	<title>Boom Market</title>
 	<meta name="description" content="Маркетинг план. Натуральные продукции">
@@ -216,7 +221,10 @@ if(!$my_fio){
 					<div class="top-menu ms-auto"></div>
 					<div class="user-box dropdown">
 						<a class="d-flex align-items-center nav-link" href="#" role="button">
-							<img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
+							<div class="user-img">
+								<img src="<?=$avatar?>" alt="user avatar">
+							</div>
+							
 							<div class="user-info ps-3">
 								<p class="user-name mb-0"><?=$my_fio["fio"]?></p>
 								<p class="designattion mb-0"></p>

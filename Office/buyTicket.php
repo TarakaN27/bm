@@ -2,7 +2,7 @@
 session_start();
 
 include("db_data.php");
-
+include("db_connect.php");
 $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_database);
 $mysqli->set_charset("utf8");
 
@@ -100,17 +100,15 @@ else {
 
 include('header.php');
 ?>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Подарки компании</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="breadcrumbs">
+	<div class="col-sm-4">
+		<div class="page-header float-left">
+			<div class="page-title">
+				<h1>Подарки компании</h1>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="content mt-3">
 	<div class="animated fadeIn">
@@ -159,20 +157,9 @@ include('header.php');
 		</div>
 	</div><!-- .animated -->
 </div><!-- .content -->
-</div><!-- /#right-panel -->
-<!-- Right Panel -->
 
+<? include("footer.php"); ?>
 
-<script src="vendors/jquery/dist/jquery.min.js"></script>
-<script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-
-<script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="assets/js/main.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://kraaden.github.io/autocomplete/autocomplete.js"></script>
 <link rel="stylesheet" type="text/css" href="https://kraaden.github.io/autocomplete/autocomplete.css">
 <script>
@@ -247,7 +234,3 @@ $("form.buy-coupon select[name='coupons']").on("change", function(){
 		})
 	});	
 </script>
-
-
-</body>
-</html>

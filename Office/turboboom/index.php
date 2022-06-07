@@ -71,35 +71,9 @@ else {
 $color = ['#ffc7a8', '#9fe88b', '#99e8e7'];
 include("../header.php");
 ?>
-<link rel="stylesheet" href="../assets/css/Treant.css">
-<link rel="stylesheet" href="../assets/css/collapsable.css">
-<style>
-	#my_avatar1 {
-		border-image: url("../images/insta_border_sm.png");
-		border-image-slice:27 27 27 27;
-		border-image-width:27px 27px 27px 27px;
-		border-image-outset:0px 0px 0px 0px;
-		border-image-repeat:stretch stretch;
-	}
-	
-	
-	.structure .btn.btn-secondary, .structure .btn.btn-primary {
-		border-color: #87878a;
-		min-height: 60px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-<script src="../assets/js/raphael.js"></script>
-<script src="../assets/js/Treant.js"></script>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.easing.js"></script>
-<div class="content mt-3" style="background: #fff">
-	<div class="animated fadeIn">
+<div class="content mt-3">
+	<div class="card">
+				<div class="card-body py-4">
 		<? if($_SESSION["login"] == "BoomMarket"): ?>
 		<div class="row">
 			<div class="card w-100">
@@ -124,33 +98,22 @@ include("../header.php");
 		<? endif; ?>
 		<div class="row">
 			<div class="col-lg-12" style="text-align: center">
-				<form method="get" class="col-md-3 input-group mx-auto my-4" <?if($_SESSION["id"]!=5436){echo 'style="display:none"';}?>>
-					<input type="text" class="form-control" placeholder="Найти партнера" name="partner">
-					<input type="hidden" name="level" value="<?=$get_level?>">
-					<input type="submit" value="Поиск" name="sub_search" class="btn btn-success">
+				<form method="get" class="col-lg-4 mx-auto my-4" <?if($_SESSION["id"]!=5436){echo 'style="display:none"';}?>>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Найти партнера" name="partner">
+						<input type="hidden" name="level" value="<?=$get_level?>">
+						<input type="submit" value="Поиск" name="sub_search" class="form-control">
+					</div>
 				</form>
-				<span class="badge badge-success mx-1"><?=$turbo_name?></span>
+				<span class="badge badge-success mx-2"><?=$turbo_name?></span>
 				<a href="/Office/turboboom/wood.php?level=<?=$get_level?>" class="badge badge-success mx-1">Вся структура</a>
-				<div style="width:100%; height:700px;" id="tree"/>
+				<div class="my-4" style="width:100%; height:700px;" id="tree"/>
 			</div>
 		</div>
 	</div><!-- .animated -->
+	</div>
 </div><!-- .content -->
-</div><!-- /#right-panel -->
-<!-- Right Panel -->
 
-
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="../vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/main.js?ver=4"></script>
-        <!--  Chart js -->
-    <script src="../vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="../assets/js/widgets.js"></script>
 	<script src="/Office/assets/js/orgchart.js"></script>
 	<script>
 		var chart = new OrgChart(document.getElementById("tree"), {
@@ -169,5 +132,6 @@ include("../header.php");
 			]
 		});
 	</script> 
-</body>
-</html>
+
+<? include("../footer.php"); ?>
+

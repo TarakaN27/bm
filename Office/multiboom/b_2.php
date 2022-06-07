@@ -144,7 +144,7 @@ include("../header.php");
 						<?php
 					if ($row['status1'] <= 1) {
 					?>
-					<a href="#" data-bs-toggle="modal" data-bs-target="#buyTypeMulti" class="btn btn-success"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Вход 352000 тг</a><br><br>
+					<a href="#" data-bs-toggle="modal" data-bs-target="#buyTypeMulti" class="btn btn-light"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Вход 352000 тг</a><br><br>
 
 					<?php }?>
 					<div class="col-lg-4 m-auto" style="text-align: center">

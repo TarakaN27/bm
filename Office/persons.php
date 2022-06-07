@@ -1,79 +1,3 @@
-<style>
-	tr {font-size:13px;}
-	tr:hover {cursor:pointer}
-	.card.card_count>.card-body {
-		padding: 0px !important;
-	}
-	.card.card_count>.card-header {
-		padding: 10px !important;
-		min-height: unset !important;
-	}
-	.card_count .card-title {
-		text-align: center;
-		line-height: 1;
-		margin: 0 auto !important;
-		font-size: unset !important;
-	}
-	.card_count .card-body p {
-		font-size: 3rem;
-		line-height: 1;
-		margin: 0;
-		padding: 15px;
-	}
-	h1.title {
-		font-size: 2rem;
-		margin-bottom: 10px;
-	}
-	.center {
-		justify-content: center;
-	}
-
-	.false {
-		color:red;
-	}
-	.level p {
-		color: #3F4254;
-		margin: 0.5rem;
-	}
-	.level h2 {margin-bottom:10px;}
-	.card_counts .card-title {
-		color:#fff !important;
-	}
-	p { color:#3F4254 !important;}
-	p.card-title {
-		margin: 0;
-		line-height: 1;
-		font-size: 13px !important;
-		margin-top: -6px !important;
-	}
-	.inlogin {
-		align-self: center;
-	}
-	@media (max-width: 1024px) {
-		p.card-title {
-			margin-top: 0 !important;
-		}
-	}
-	.check {
-		display: flex;
-   		align-items: center;
-	}
-	.check label {
-		margin-bottom: 0;
-	}
-	.check input {
-		width: 20px;
-    	height: 20px;
-    	margin-left: 10px;
-	}
-	.card.card-custom.card_counts > .card-header {
-		align-items: center;
-	}
-	.details {
-		display: block !important;
-    	padding: 2px 0 !important;
-	}
-</style>
 <?php
 session_start();
 include("db_connect.php");
@@ -227,7 +151,7 @@ $pay_type = ["Переход", "Куплен", "Активирован"];
 
 include("header.php");
 ?>
-        <div class="content mt-3">
+        <div class="content mt-3 person">
             <div class="animated fadeIn">
                 <div class="row">
 					
@@ -244,8 +168,8 @@ include("header.php");
 								<div class="card-header">
 									<strong class="card-title">Редактирование <?=$person["login"]?></strong>
 									<div>
-										<a href="<?=$back_url?>" class="btn btn-primary inlogin">Назад</a>
-										<a href="?action=inlogin&edit-id=<?=$_GET["edit-id"]?>" class="btn btn-primary inlogin">Войти под логином</a>
+										<a href="<?=$back_url?>" class="btn btn-light inlogin">Назад</a>
+										<a href="?action=inlogin&edit-id=<?=$_GET["edit-id"]?>" class="btn btn-light inlogin">Войти под логином</a>
 									</div>
 								</div>
 								<div class="card-body">
@@ -268,11 +192,11 @@ include("header.php");
 										</div>
 										<div class="row-group check mt-5 mb-5">
 											<label>Заблокировать бонусы</label>
-											<input type="checkbox" name="block_bonus" class="form-control" <?if($person["block_bonus"] == 1){echo 'checked';}?> value="1">
+											<input type="checkbox" name="block_bonus" class="input-checkbox" <?if($person["block_bonus"] == 1){echo 'checked';}?> value="1">
 										</div>
 										<div class="input-group mt-2">
 											<input type="hidden" name="change-profile" class="form-control" value="<?=$_GET["edit-id"]?>">
-											<input type="submit" name="sub_btn" value="Изменить" class="btn btn-primary mr-2">
+											<input type="submit" name="sub_btn" value="Изменить" class="btn btn-light mr-2">
 											<a href="?action=clear-history&id=<?=$_GET["edit-id"]?>" class="btn btn-danger">Очистить историю</a>
 										</div>
 									</form>
@@ -318,17 +242,17 @@ include("header.php");
 											</select>
 											<input type="hidden" name="change-id" class="form-control" value="<?=$_GET["edit-id"]?>">
 											<input type="hidden" name="back-url" class="form-control" value="<?=$back_url?>">
-											<input type="submit" name="sub_btn" value="Добавить" class="btn btn-primary">
+											<input type="submit" name="sub_btn" value="Добавить" class="btn btn-light">
 										</div>
 										
 										<div class="input-group row teacher mt-2 d-none">
 											<input type="text" name="leader" value="" placeholder="Лидер" class="form-control">
-											<button class="btn btn-primary" id="leader_username_check" type="button">Проверить</button>
+											<button class="btn btn-light" id="leader_username_check" type="button">Проверить</button>
 										</div>
 										<div class="msg-leader mb-3"></div>
 										<div class="input-group row leader mt-2 d-none">
 											<input type="text" name="teacher" value="" placeholder="Наставник" class="form-control">
-											<button class="btn btn-primary" id="teacher_username_check" type="button">Проверить</button>
+											<button class="btn btn-light" id="teacher_username_check" type="button">Проверить</button>
 										</div>
 										<div class="msg-teacher mb-3"></div>
 									</form>
@@ -336,7 +260,7 @@ include("header.php");
 							</div>	
 						
 							<h1 class="title">Основной маркетинг:</h1>
-							<div class="row">
+							<div class="row levels">
 								<? foreach($levels as $level=>$text): ?>
 									<?
 										$query_count = mysql_query("select * from ".$level." WHERE user_id='".$_GET["edit-id"]."'");
@@ -345,7 +269,7 @@ include("header.php");
 									?>
 									<div class="col-xl-3" style="text-align: center">
 										<div class="card card-custom card_counts <?if($count>0){echo "badge-success";} else {echo "badge-danger";}?>">
-											<div class="card-header">
+											<div class="card-header d-flex flex-wrap justify-content-between">
 												<strong class="card-title"><?=$text?></strong>
 												<div>
 													<p class="card-title"><?=$query["post_time"]?></p>
@@ -362,7 +286,7 @@ include("header.php");
 								<? endforeach; ?>
 							</div>
 							<h1 class="title">Multi Boom:</h1>
-							<div class="row">
+							<div class="row levels">
 								<? foreach($multi as $level=>$text): ?>
 									<?
 										$query_count = mysql_query("select * from ".$level." WHERE user_id='".$_GET["edit-id"]."'");
@@ -371,7 +295,7 @@ include("header.php");
 									?>
 									<div class="col-xl-3" style="text-align: center">
 										<div class="card card-custom card_counts <?if($count>0){echo "badge-success";} else {echo "badge-danger";}?>">
-											<div class="card-header">
+											<div class="card-header d-flex flex-wrap justify-content-between">
 												<strong class="card-title"><?=$text?></strong>
 												<div>
 													<p class="card-title"><?=$query["post_time"]?></p>
@@ -389,7 +313,7 @@ include("header.php");
 							</div>
 						
 							<h1 class="title">Infinity:</h1>
-							<div class="row">
+							<div class="row levels">
 								<? foreach($infinity as $level=>$text): ?>
 									<?
 										$query_count = mysql_query("select * from ".$level." WHERE user_id='".$_GET["edit-id"]."'");
@@ -398,7 +322,7 @@ include("header.php");
 									?>
 									<div class="col-xl-3" style="text-align: center">
 										<div class="card card-custom card_counts <?if($count>0){echo "badge-success";} else {echo "badge-danger";}?>">
-											<div class="card-header">
+											<div class="card-header d-flex flex-wrap justify-content-between">
 												<strong class="card-title"><?=$text?></strong>
 												<div>
 													<p class="card-title"><?=$query["post_time"]?></p>
@@ -416,7 +340,7 @@ include("header.php");
 							</div>
 						
 							<h1 class="title">Turbo Boom:</h1>
-							<div class="row">
+							<div class="row levels">
 								<? foreach($turbo_levels as $level=>$row): ?>
 									<?
 										$query_count = mysql_query("select * from ".$row["table"]." WHERE user_id='".$_GET["edit-id"]."' AND level='".$row["level"]."'");
@@ -425,7 +349,7 @@ include("header.php");
 									?>
 									<div class="col-xl-3" style="text-align: center">
 										<div class="card card-custom card_counts <?if($count>0){echo "badge-success";} else {echo "badge-danger";}?>">
-											<div class="card-header">
+											<div class="card-header d-flex flex-wrap justify-content-between">
 												<strong class="card-title">Level <?=$level?></strong>
 												<div>
 													<p class="card-title"><?=$query["date"]?></p>
@@ -446,9 +370,9 @@ include("header.php");
                             </div>
                             <div class="card-body">
 								<form method="post">
-									<div class="input-group row">
+									<div class="input-group">
 										<input type="text" name="f_search" class="form-control" palceholder="Введите логин пользователя" value="<?=$st?>">
-										<input type="submit" name="sub_btn" value="Поиск" class="btn btn-primary">
+										<input type="submit" name="sub_btn" value="Поиск" class="btn btn-light">
 									</div>
 								</form>
 								<?= ($message2!="")?$message2:""; ?>
@@ -511,7 +435,7 @@ include("header.php");
 											</div>
 											<div class="card-body">
 												<p class="count"><?=$count?></p>
-												<a href="/Office/history_buy_level.php?action=level&table=<?=$level?>" class="btn btn-primary details">Просмотр</a>
+												<a href="/Office/history_buy_level.php?action=level&table=<?=$level?>" class="btn btn-light details">Просмотр</a>
 											</div>
 										</div>
 									</div>
@@ -531,7 +455,7 @@ include("header.php");
 											</div>
 											<div class="card-body">
 												<p class="count"><?=$count?></p>
-												<a href="/Office/history_buy_level.php?action=level&table=<?=$level?>" class="btn btn-primary details">Просмотр</a>
+												<a href="/Office/history_buy_level.php?action=level&table=<?=$level?>" class="btn btn-light details">Просмотр</a>
 											</div>
 										</div>
 									</div>
@@ -551,7 +475,7 @@ include("header.php");
 											</div>
 											<div class="card-body">
 												<p class="count"><?=$count?></p>
-												<a href="/Office/history_buy_level.php?action=level&table=<?=$level?>" class="btn btn-primary details">Просмотр</a>
+												<a href="/Office/history_buy_level.php?action=level&table=<?=$level?>" class="btn btn-light details">Просмотр</a>
 											</div>
 										</div>
 									</div>
@@ -571,7 +495,7 @@ include("header.php");
 											</div>
 											<div class="card-body">
 												<p class="count"><?=$count?></p>
-												<a href="/Office/history_buy_level.php?action=level&table=<?=$row['table']?>&level=<?=$row["level"]?>" class="btn btn-primary details">Просмотр</a>
+												<a href="/Office/history_buy_level.php?action=level&table=<?=$row['table']?>&level=<?=$row["level"]?>" class="btn btn-light details">Просмотр</a>
 											</div>
 										</div>
 									</div>
@@ -587,37 +511,11 @@ include("header.php");
             </div><!-- .animated -->
         </div><!-- .content -->
 
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-
-
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-    <script src="vendors/jszip/dist/jszip.min.js"></script>
-    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<? include("footer.php"); ?>
 	<script>
 		$(".href").on("click", function(){
 			var href=$(this).attr("data-href");
 			window.location.href = href;
 		})
 	</script>
-<script src="assets/js/widgets.js"></script>
 
-</body>
-
-</html>

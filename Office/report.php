@@ -28,27 +28,11 @@ else {
 
 include("header.php");
 ?>
-<script>
-$(document).ready(function () {
-	$('#bootstrap-data-table-export').DataTable({
-		"order": [[ 2, "asc" ]]
-	});
-}
-</script>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
                         <h1>Отчеты</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                       
-                        </ol>
                     </div>
                 </div>
             </div>
@@ -67,7 +51,7 @@ $(document).ready(function () {
                             </div>
                             <div class="card-body">
 								<?= ($message2!="")?$message2:""; ?>
-                                <table class="table table-hover table-head-custom mw-380">
+                                <table class="bootstrap-data-table-report-4 table table-hover table-head-custom mw-380">
                                     <thead>
                                         <tr>
                                             <th>Сумма</th>
@@ -169,8 +153,8 @@ $(document).ready(function () {
 			</span>Входящие переводы</strong>
                             </div>
                             <div class="card-body">
-								<?= ($message2!="")?$message2:""; ?>
-                                <table class="table table-hover table-head-custom mw-380">
+								<?= ($message2!="")?$message2:""; ?> 
+                                <table class="bootstrap-data-table-report-1 table table-hover table-head-custom mw-380">
                                     <thead>
                                         <tr>
 											<th>Время</th>
@@ -213,7 +197,7 @@ $(document).ready(function () {
                             </div>
                             <div class="card-body">
 								<?= ($message2!="")?$message2:""; ?>
-                                <table class="table table-hover table-head-custom mw-380">
+                                <table class="bootstrap-data-table-report-1 table table-hover table-head-custom mw-380">
                                     <thead>
                                         <tr>
 											<th>Время</th>
@@ -247,31 +231,4 @@ $(document).ready(function () {
             </div><!-- .animated -->
         </div><!-- .content -->
 
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-
-
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
-
-    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-    <script src="vendors/jszip/dist/jszip.min.js"></script>
-    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
-
-
-</body>
-
-</html>
+<? include("footer.php"); ?>

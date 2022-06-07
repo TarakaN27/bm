@@ -110,7 +110,9 @@ if(isset($_POST["action"]) && $_POST["action"] == "show" && in_array($_POST["sho
 				<div class="card">
 					<div class="card-body">
 						<div class="d-flex flex-column align-items-center text-center">
-							<img src="https://via.placeholder.com/110x110" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+							<div class="user-img-profile">
+								<img src="<?=$avatar?>" alt="Person">
+							</div>
 							<div class="mt-3">
 								<h4><?= $show_row['fio'] ?></h4>
 								<p class="mb-1"></p>

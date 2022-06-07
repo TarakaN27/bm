@@ -146,7 +146,7 @@ include("header.php");
 					<?php
 					if ($row['status'] == 0) {
 					?>
-					<a href="#" data-bs-toggle="modal" data-bs-target="#buyTypeMarketing" class="btn btn-success"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Вход 6500 тг</a><br><br>
+					<a href="#" data-bs-toggle="modal" data-bs-target="#buyTypeMarketing" class="btn btn-light"> <i class="menu-icon fa fa-sitemap " style="font-size:18px;"></i>Вход 6500 тг</a><br><br>
 					<?php
 					}
 					

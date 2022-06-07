@@ -61,58 +61,17 @@ else {
 $color = ['#ffc7a8', '#9fe88b', '#99e8e7'];
 include("../header.php");
 ?>
-<link rel="stylesheet" href="../assets/css/Treant.css">
-<link rel="stylesheet" href="../assets/css/collapsable.css">
-<style>
-	#my_avatar1 {
-		border-image: url("../images/insta_border_sm.png");
-		border-image-slice:27 27 27 27;
-		border-image-width:27px 27px 27px 27px;
-		border-image-outset:0px 0px 0px 0px;
-		border-image-repeat:stretch stretch;
-	}
-	
-	
-	.structure .btn.btn-secondary, .structure .btn.btn-primary {
-		border-color: #87878a;
-		min-height: 60px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-<script src="../assets/js/raphael.js"></script>
-<script src="../assets/js/Treant.js"></script>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.easing.js"></script>
-<div class="content mt-3" style="background: #fff">
+<div class="content mt-3">
 	<div class="animated fadeIn">
 		<div class="row">
 			<div class="col-lg-12" style="text-align: center">
 				<span class="badge badge-success"><?=$turbo_name?></span>
-				<div style="width:100%; height:700px;" id="tree"/>
+				<div class="my-4" style="width:100%; height:700px;" id="tree"/>
 			</div>
 		</div>
 	</div><!-- .animated -->
 </div><!-- .content -->
-</div><!-- /#right-panel -->
-<!-- Right Panel -->
 
-
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="../vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-        <!--  Chart js -->
-    <script src="../vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="../assets/js/widgets.js"></script>
 	<script src="/Office/assets/js/orgchart.js"></script>
 	<script>
 		var chart = new OrgChart(document.getElementById("tree"), {
@@ -131,5 +90,4 @@ include("../header.php");
 			]
 		});
 	</script> 
-</body>
-</html>
+<? include("../footer.php"); ?>

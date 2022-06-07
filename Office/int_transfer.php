@@ -86,7 +86,7 @@ function isNumberKey(evt){
 												</div>
 												<input id="username-perevod" type="text" class="form-control" placeholder="Введите логин">
 												<div class="input-group-append">
-													<button class="btn btn-info copyfn" id="perevod_username_check" type="button">Проверить</button>
+													<button class="btn btn-light copyfn" id="perevod_username_check" type="button">Проверить</button>
 												</div>
 											</div>
 											<div id="perevod_username_check_msg" class=""></div>
@@ -101,7 +101,7 @@ function isNumberKey(evt){
 											</div>
 											<div id="perevod_summa_msg" class="text-danger"></div>
 											<div id="perevod_finish" class="mt-4">
-												<input type="button" id="perevesti" disabled class="btn btn-primary" value="Продолжить">
+												<input type="button" id="perevesti" disabled class="btn btn-light" value="Продолжить">
 											</div>
 										</div>
 									</div>
@@ -166,7 +166,7 @@ function isNumberKey(evt){
 										<input type="number" class="form-control" required min="0" value="<?=$general_options["max_balans_vyvod"]?>" name="option_max_balans_vyvod">
 									</div>
 									<div class="form-group">
-										<input type="submit" class="form-control btn btn-primary" value="Сохранить">
+										<input type="submit" class="form-control btn btn-light" value="Сохранить">
 									</div>
 								</form>
 								
@@ -183,7 +183,7 @@ function isNumberKey(evt){
 											<option <?=$selected[1]?> value="1">Включено</option>
 										</select>
 										<div class="form-group">
-											<input type="submit" class="form-control btn btn-primary" name="disable-fast-start" value="Сохранить">
+											<input type="submit" class="form-control btn btn-light" name="disable-fast-start" value="Сохранить">
 										</div>
 									</div>
 								</form>
@@ -223,7 +223,7 @@ function isNumberKey(evt){
 														<input type="hidden" name="action" value="save-balans">
 														<input type="hidden" name="edit-id" value="<?=$row["id"]?>">
 														<input type="number" name="akwa" class="form-control" value="<?=$row["akwa"]?>" placeholder="0">
-														<input type="submit" class="btn btn-primary" value="Сохранить">
+														<input type="submit" class="btn btn-light" value="Сохранить">
 													</div>
 												</form>
 											</td>
@@ -240,61 +240,30 @@ function isNumberKey(evt){
 											<input type="hidden" name="action" value="add-profile">
 											<div class="input-group">
 												<div class="input-group-prepend" id="check-profile">
-													<div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
+													<div class="input-group-text"><div class="parent-icon"><i class="bx bx-search-alt"></i></div></div>
 												</div>
 												<input type="text" name="profile" class="form-control" placeholder="Логин">
 											</div>
 										</div>
 										<div class="row-group mb-2 w-50">
-											<input type="submit" disabled class="btn btn-primary w-100" value="Добавить">
+											<input type="submit" disabled class="btn btn-light w-100" value="Добавить">
 										</div>
 									</div>
 									<div class="msg"></div>
 								</form>
 
-								<button id="add-profile" class="btn btn-primary">Добавить</button>
+								<button id="add-profile" class="btn btn-light">Добавить</button>
 							</div>
 						</div>
 					</div>
 				</div>
 <? endif; ?>
-				
-				
-				
+					
 			</div><!-- .animated -->
 	</div><!-- .content -->
 
-</div><!-- /#right-panel -->
-<!-- Right Panel -->
+<? include("footer.php"); ?>
 
-<script src="assets/js/swal.js"></script>
-<script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="assets/js/main.js"></script>
-
-
-<script src="vendors/jquery/dist/jquery.min.js"></script>
-<script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="assets/js/main.js"></script>
-
-
-<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-<script src="vendors/jszip/dist/jszip.min.js"></script>
-<script src="vendors/pdfmake/build/pdfmake.min.js"></script>
-<script src="vendors/pdfmake/build/vfs_fonts.js"></script>
-<script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-<script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script>
 function showErr(code = false, err = false) {
 	var msg = "Произошла ошибка. ";
@@ -309,7 +278,7 @@ function showErr(code = false, err = false) {
 		buttonsStyling: false,
 		confirmButtonText: "Понятно!",
 		customClass: {
-			confirmButton: "btn font-weight-bold btn-light-primary"
+			confirmButton: "btn font-weight-bold btn-light-light"
 		}
 	});
 }	
@@ -321,7 +290,7 @@ function showErr(code = false, err = false) {
 		
 		$("#summa-perevod").val("").attr("disabled", false);
 		$("#perevod_summa_msg").html("");
-		$("#perevod_finish").html('<input type="button" id="perevesti" disabled class="btn btn-primary" value="Продолжить">');
+		$("#perevod_finish").html('<input type="button" id="perevesti" disabled class="btn btn-light" value="Продолжить">');
 		
 		if(username.length==0) {
 			$("#perevod_username_check_msg").html("Заполните поле.").removeClass("text-success").addClass("text-danger");
@@ -369,7 +338,7 @@ function showErr(code = false, err = false) {
 			else {
 				$('#summa-perevod').attr("disabled", true);
 				$("#perevod_summa_msg").html("");
-				$("#perevod_finish").html('Вы переводите <b>' + summa + ' Kzt</b> пользователю <b>' + username + '</b>.<br><br>' + '<button type="button" class="btn btn-info mr-2 mb-2" data-bs-dismiss="modal" aria-label="Close">Отменить</button><input type="button" id="perevod_finish_btn" class="btn btn-success mb-2" value="Перевести">');
+				$("#perevod_finish").html('Вы переводите <b>' + summa + ' Kzt</b> пользователю <b>' + username + '</b>.<br><br>' + '<button type="button" class="btn btn-light mb-2" data-bs-dismiss="modal" aria-label="Close">Отменить</button><input type="button" id="perevod_finish_btn" class="btn btn-light mb-2 mx-1" value="Перевести">');
 			}
 			
 			
@@ -385,7 +354,7 @@ function showErr(code = false, err = false) {
 
 		var username = $("#username-perevod").val();
 		var summa = parseInt($("#summa-perevod").val());
-
+		$(this).prop("disabled", true);
 		if(username && summa) {
 			$.ajax({
 				type:'POST',
@@ -428,9 +397,3 @@ function showErr(code = false, err = false) {
 		$('#perevesti').attr("disabled", false);
 	});
 </script>
-
-
-
-
-</body>
-</html>

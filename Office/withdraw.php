@@ -1,11 +1,3 @@
-<style>
-	.alert {
-		margin-top: 10px;
-	}
-	td {
-		font-size: 13px;
-	}
-</style>
 <?php
 session_start();
 include("db_connect.php");
@@ -190,7 +182,7 @@ jQuery( document ).ready(function( $ ) {
 									<strong class="card-title">Выводы</strong>
 								</div>
 								<div class="card-body">
-									<table class="table table-hover table-head-custom mw-380">
+									<table class="bootstrap-data-table-withdraw table table-hover table-head-custom mw-380">
 										<thead>
 											<tr>
 												<th>Логин</th>
@@ -240,17 +232,4 @@ jQuery( document ).ready(function( $ ) {
                     </div>
 				</div><!-- .animated -->
 			</div><!-- .content -->
-</div><!-- /#right-panel -->
-<!-- Right Panel -->
-
-
-<script src="vendors/jquery/dist/jquery.min.js"></script>
-<script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-
-<script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<? include("footer.php"); ?>

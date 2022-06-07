@@ -172,7 +172,7 @@ a {
 
 .page-wrapper {
 
-	height: 100%;
+	height: auto;
 
 	margin-top: 60px;
 
@@ -2927,19 +2927,31 @@ input::placeholder {
 }
 
 .user-img {
-
 	width: 42px;
-
-	height: 42px;
-
-	border-radius: 50%;
-
-	border: 0 solid #e5e5e5;
-
-	padding: 0
-
+    height: 42px;
+    border-radius: 50%;
+    border: 0 solid #e5e5e5;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+.user-img img, .user-img-profile img {
+	min-width: 100%;
+    min-height: 100%;
+}
+.user-img-profile {
+	width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 0 solid #e5e5e5;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .user-info .user-name {
 
 	font-size: 15px;

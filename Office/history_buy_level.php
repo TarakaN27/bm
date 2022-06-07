@@ -1,29 +1,3 @@
-<style>
-	tr {font-size:13px;}
-	tr:hover {cursor:pointer}
-	h1.title {
-		font-size: 2rem;
-		margin-bottom: 10px;
-	}
-	.center {
-		justify-content: center;
-	}
-	.card .card-body .href a {
-		border-radius: 10px;
-		margin: 0 5px 5px 0;
-	}
-	.card .card-body .href {
-		margin-bottom:20px;
-	}
-	.card .card-body .href .row {
-		margin:0;
-	}
-	@media screen and (max-width:768px) {
-		.card .card-body .href .row {
-			justify-content: center;
-		}
-	}
-</style>
 <?php
 session_start();
 include("db_connect.php");
@@ -122,19 +96,19 @@ include("header.php");
 				<div class="card card-custom">
 					<div class="card-header">
 						<strong class="card-title"><?=$title_level?></strong>
-						<a href="/Office/persons.php" class="btn btn-primary">Назад</a>
+						<a href="/Office/persons.php" class="btn btn-light">Назад</a>
 					</div>
 					<div class="card-body">
 						<? if(isset($_GET["table"])): ?>
 						<form method="get">
-							<div class="input-group row">
+							<div class="input-group">
 								<input type="text" name="f_search" class="form-control" palceholder="Введите логин пользователя" value="<?=$st?>">
 								<input type="hidden" name="table" value="<?=$_GET["table"]?>">
 								<input type="hidden" name="action" value="level">
 								<? if(isset($_GET["level"])):?>
 									<input type="hidden" name="level" value="<?=$_GET["level"]?>">
 								<? endif; ?>
-								<input type="submit" name="sub_btn" value="Поиск" class="btn btn-primary">
+								<input type="submit" name="sub_btn" value="Поиск" class="btn btn-light">
 							</div>
 						</form>
 						<? endif; ?>
@@ -210,36 +184,10 @@ include("header.php");
 	</div><!-- .animated -->
 </div><!-- .content -->
 
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-
-
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-    <script src="vendors/jszip/dist/jszip.min.js"></script>
-    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<? include("footer.php"); ?>
 	<script>
 		$(".href").on("click", function(){
 			var href=$(this).attr("data-href");
 			window.location.href = href;
 		})
 	</script>
-<script src="assets/js/widgets.js"></script>
-
-</body>
-</html>

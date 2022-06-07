@@ -179,8 +179,6 @@ jQuery(document).ready(function($) {
 		$(".package-name").text(name);
 		$(".package-price").text(price+" Тг.");
 		$(".package-block").removeClass("d-none");
-		
-		
 	})
 	
 

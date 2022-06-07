@@ -76,7 +76,6 @@ a.sponsors {
     border-radius: 0 0.42rem 0.42rem 0;
 }
 .result {
-    max-width: 1140px;
     overflow-x: scroll;
     user-select: none;
 	max-height:80vh;
@@ -235,26 +234,23 @@ input.success {
 	margin: 2rem 0;
 }
 .infinity .table .col-6 {
-	border: 1px solid #3699ff;
+	border: 1px solid rgb(255 255 255 / 85%);
 }
 .infinity .body {
-	color: #181c32;
     padding: 5px 0;
 }
 .infinity .head {
-	border-bottom: 1px solid #6ca570;
-    color: #3699ff;
+	border-bottom: 1px solid rgb(255 255 255 / 85%);
     padding: 6px 0;
 }
 .infinity h1.title {
 	font-size: 25px;
-    color: #181c32;
+    color: #fff;
     margin: 1rem 0;
     text-transform: uppercase;
 }
 .infinity .desc-title {
 	font-size: 16px;
-    color: #181c32;
     margin: 1rem 0;
     text-transform: uppercase;
 }
@@ -279,18 +275,21 @@ input.success {
 	pointer-events: none;
 }
 .infinity .packages .card.active {
-    border: 4px solid #08968f !important;
+    border: 4px solid #73ab62 !important;
 }
 .infinity .packages .card-title {
     margin-bottom: 0;
 	font-size: 1.5rem;
 }
 .infinity .packages .card-header, .infinity .packages .card-body {
-    padding: 1rem;
-	background-color: unset;
+    padding: 1rem 0;
+    background-color: unset;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
 }
 .infinity .packages .card-body p {
-	color: #fff !important;
+	margin-bottom:0;
 }
 
 .card.card_count>.card-header {
@@ -312,7 +311,6 @@ input.success {
     line-height: 1;
     margin: 0;
     padding: 15px;
-    color: #3F4254 !important;
 }
 .red {
 	color:red;
@@ -463,3 +461,100 @@ input.success {
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5); }
+
+.structure .btn.btn-secondary, .structure .btn.btn-primary {
+		border-color: #87878a;
+		min-height: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+.boc-light {
+	background: unset !important;
+}
+
+.person tr {font-size:13px;}
+.person tr:hover {cursor:pointer}
+.person .card.card_count>.card-body {
+	padding: 0px !important;
+}
+.person .card.card_count>.card-header {
+	padding: 10px !important;
+	min-height: 50px !important;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.person .card_count .card-title {
+	text-align: center;
+	line-height: 1;
+	margin: 0 auto !important;
+	font-size: unset !important;
+}
+.person .card_count .card-body p {
+	font-size: 2rem;
+	line-height: 1;
+	margin: 0;
+	padding: 15px;
+}
+.person h1.title {
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+.person .center {
+	justify-content: center;
+}
+
+.person .false {
+	color:red;
+}
+.person .level p {
+	color: #3F4254;
+	margin: 0.5rem;
+}
+.person .level h2 {margin-bottom:10px;}
+.person .card_counts .card-title {
+	color:#fff !important;
+}
+.person p { color:#fff !important;}
+.person p.card-title {
+	margin: 0;
+	line-height: 1;
+	font-size: 13px !important;
+	margin-top: -6px !important;
+}
+.person .inlogin {
+	align-self: center;
+}
+@media (max-width: 1024px) {
+	.person p.card-title {
+		margin-top: 0 !important;
+	}
+}
+.person .check {
+	display: flex;
+	align-items: center;
+}
+.person .check label {
+	margin-bottom: 0;
+}
+.person .check input {
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+}
+.person .card.card-custom.card_counts > .card-header {
+	align-items: center;
+}
+.person .details {
+	display: block !important;
+	padding: 2px 0 !important;
+}
+.person .levels .card-title {
+	margin:0 !important;
+}
+
+.google-visualization-orgchart-node-medium {
+	color:#000 !important;
+}

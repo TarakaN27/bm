@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include("../db_connect.php");
 include("functions.php");
@@ -24,7 +23,7 @@ if(isset($my["login"]) && $my["infinity_package"]==4){
 	
 	$date_end = date('Y-m-d H:i:s',strtotime(date('Y-m-01 23:59:59',strtotime('next month')).'-1 day'));
 	$history_pv = find("SELECT history.*, u.login, f.login as user_from FROM `history` LEFT JOIN `users` as u ON history.user_id=u.id LEFT JOIN `users` as f ON f.id=history.from WHERE `type`='add-inf-pv' AND `user_id` IN (".$ids_str.") AND `date` between '".$date_start."' and '".$date_end."' GROUP BY history.`date` ORDER BY `id` DESC");
-	var_dump($history_pv);
+
 	$count_pv = 0;
 	$count_all = 0;
 	$arr_shareholder = [];
@@ -65,8 +64,7 @@ if(isset($my["login"]) && $my["infinity_package"]==4){
 include("../header.php");
 ?>
 	<div class="content mt-5">
-		<div class="animated fadeIn">
-			<div class="col-lg-12" style="text-align: center">
+			<div class="col-lg-12 row" style="text-align: center">
 				<? if(isset($my["login"]) && $my["infinity_package"]==4): ?>
 				<div class="col-12">
 					<div class="card card-custom card_count">
@@ -128,7 +126,7 @@ include("../header.php");
 								</span>Начисления</strong>
 						</div>
 						<div class="card-body">
-							<table class="table table-hover table-head-custom mw-380">
+							<table class="bootstrap-data-table table table-hover table-head-custom mw-380">
 								<thead>
 									<tr>
 										<th>Сумма</th>
@@ -224,11 +222,11 @@ include("../header.php");
 											<input type="date" class="form-control" name="date-end" value="<?=$date_end?>">
 										</div>
 										<div class="form-group col-lg-2 col-md-12 align-self-end">
-											<input type="submit" class="btn btn-primary w-100" value="Выбрать">
+											<input type="submit" class="btn btn-light w-100" value="Выбрать">
 										</div>
 									</div>
 								</form>
-							<table class="table table-hover table-head-custom mw-380">
+							<table class="bootstrap-data-table table table-hover table-head-custom mw-380">
 								<thead>
 									<tr>
 										<th>Сумма</th>
@@ -273,9 +271,7 @@ include("../header.php");
 				</div>
 				<? endif; ?>
 			</div>
-		</div><!-- .animated -->
 	</div><!-- .content -->
-
 
 <? include("../footer.php"); ?>
 

@@ -39,13 +39,6 @@ else {
 $color = ['#ffc7a8', '#9fe88b', '#99e8e7'];
 include("../header.php");
 ?>
-<link rel="stylesheet" href="../assets/css/Treant.css">
-<link rel="stylesheet" href="../assets/css/collapsable.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../assets/js/raphael.js"></script>
-<script src="../assets/js/Treant.js"></script>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.easing.js"></script>
         <div class="content infinity mt-3">
             <div class="animated fadeIn">
 
@@ -68,7 +61,7 @@ include("../header.php");
 					?>
 					<div class="row packages">
 					<? foreach($packages as $id=>$pack): ?>
-						<div class="card btn btn-success <?=$pack_disabled[$id]?>" data-id="<?=$id+1?>" data-name="<?=$pack["name"]?>" data-price="<?=$pack["price"]?>">
+						<div class="card btn btn-success col-lg-2 <?=$pack_disabled[$id]?>" data-id="<?=$id+1?>" data-name="<?=$pack["name"]?>" data-price="<?=$pack["price"]?>">
 							<div class="card-header">
 								<div class="card-title">Пакет: <?=$pack["name"]?></div>
 							</div>
@@ -93,18 +86,18 @@ include("../header.php");
 						
 						</div>
 						<? if ($upgrade == false): ?>
-						<form method="post" class="add-infinity disabled">
+						<form method="post" class="add-infinity disabled row">
 							<h1 class="title">Выберите вид оплаты</h1>
-							<div class="row-group type-pay">
+							<div class="row-group type-pay col-lg-6">
 								<input type="radio" id="type_balans" name="type_pay" value="balans" checked>
 								<label for="type-balans">Баланс</label>
 							</div>
-							<div class="row-group type-pay">
+							<div class="row-group type-pay col-lg-6">
 								<input type="radio" id="type_bonus" name="type_pay" value="bonus">
 								<label for="type-bonus">Бонусы</label>
 							</div>
 							<div class="row-group">
-								<button type="submit" disabled class="btn btn-primary mb-3 w-100" value="1">Купить пакет</button>
+								<button type="submit" disabled class="btn btn-light mb-3 w-100" value="1">Купить пакет</button>
 							</div>
 							<div class="err-msg mb-3"></div>
 							<h1 class="desc-title">Необязательные поля для заполнения</h1>
@@ -113,7 +106,7 @@ include("../header.php");
 									<span class="input-group-text">Лидер *</span>
 								</div>
 								<input type="text" class="form-control" name="leader">
-								<button class="btn btn-primary" id="leader_username_check" type="button">Проверить</button>
+								<button class="btn btn-light" id="leader_username_check" type="button">Проверить</button>
 							</div>
 							<div class="msg-leader mb-3"></div>
 							<div class="input-group">
@@ -121,7 +114,7 @@ include("../header.php");
 									<span class="input-group-text">Наставник</span>
 								</div>
 								<input type="text" class="form-control" name="teacher">
-								<button class="btn btn-primary" id="teacher_username_check" type="button">Проверить</button>
+								<button class="btn btn-light" id="teacher_username_check" type="button">Проверить</button>
 							</div>
 							<div class="msg-teacher mb-3"></div>
 						</form>
@@ -130,7 +123,7 @@ include("../header.php");
 						
 						<form method="post" class="upgrade-infinity">
 							<div class="row-group">
-								<button type="submit" disabled class="btn btn-primary mb-3 w-100" value="1">Улучшить пакет</button>
+								<button type="submit" disabled class="btn btn-light mb-3 w-100" value="1">Улучшить пакет</button>
 							</div>
 							<div class="err-msg mb-3"></div>
 						</form>						
@@ -161,7 +154,7 @@ include("../header.php");
 											<option <?=$selected[0]?> value="0">Отключено</option>
 											<option <?=$selected[1]?> value="1">Включено</option>
 										</select>
-										<input type="submit" class="btn btn-primary" name="disable-fast-start" value="Сохранить">
+										<input type="submit" class="btn btn-light" name="disable-fast-start" value="Сохранить">
 									</div>
 								</div>
 							</form>
@@ -171,22 +164,6 @@ include("../header.php");
 				<? endif; ?>
 				
 			
-                                        </div><!-- .animated -->
-                                    </div><!-- .content -->
-                                </div><!-- /#right-panel -->
-                                <!-- Right Panel -->
-
-
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="../vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-        <!--  Chart js -->
-    <script src="../vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="../assets/js/widgets.js"></script>
-</body>
-</html>
+		</div><!-- .animated -->
+	</div><!-- .content -->
+<? include("../footer.php"); ?>

@@ -51,31 +51,31 @@ include("header.php");
                                         </tr>
                                     </thead>
                                     <tbody>
-																			<?php
-																			$result2 = mysql_query("SELECT * FROM `users` WHERE `sponsor` LIKE '".$_SESSION['login']."' ORDER BY `sponsor` ASC");
+										<?php
+										$result2 = mysql_query("SELECT * FROM `users` WHERE `sponsor` LIKE '".$_SESSION['login']."' ORDER BY `sponsor` ASC");
 
-																			if (mysql_num_rows($result2)>0) {
+										if (mysql_num_rows($result2)>0) {
 
-																				while ($row2 = mysql_fetch_array($result2)) {
-																					
-																					/*if($row2["hide_data"] == 0 && $_SESSION["login"] != "BoomMarket") {
-																						$row2["sponsor"] = "******";
-																						$row2["status"] = "******";
-																					}*/
-																					
-																					echo '<tr>';
-																					
-																					echo '<td>'.$row2['login'].'</td>';
-																					echo '<td>'.$row2['sponsor'].'</td>';
-																					echo '<td>'.$row2['status'].'</td>';
-																					echo '<td>'.$row2['reg_time'].'</td>';
-																					
-																					echo '</tr>';
-																				}
+											while ($row2 = mysql_fetch_array($result2)) {
+												
+												/*if($row2["hide_data"] == 0 && $_SESSION["login"] != "BoomMarket") {
+													$row2["sponsor"] = "******";
+													$row2["status"] = "******";
+												}*/
+												
+												echo '<tr>';
+												
+												echo '<td>'.$row2['login'].'</td>';
+												echo '<td>'.$row2['sponsor'].'</td>';
+												echo '<td>'.$row2['status'].'</td>';
+												echo '<td>'.$row2['reg_time'].'</td>';
+												
+												echo '</tr>';
+											}
 
-																			}
-																			else echo '<tr><td colspan="5">Никого нет</td></tr>';
-																			?>
+										}
+										else echo '<tr><td colspan="5">Никого нет</td></tr>';
+										?>
                                     </tbody>
                                 </table>
                             </div>
@@ -87,31 +87,4 @@ include("header.php");
             </div><!-- .animated -->
         </div><!-- .content -->
 
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-
-
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
-
-    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-    <script src="vendors/jszip/dist/jszip.min.js"></script>
-    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
-
-
-</body>
-
-</html>
+<? include("footer.php"); ?>
