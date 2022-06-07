@@ -101,191 +101,120 @@ if(isset($_POST["action"]) && $_POST["action"] == "show" && in_array($_POST["sho
 }
 
 ?>
-<style>
-	#my_avatar1 {
-		border-image: url("images/insta_border_sm.png");
-		border-image-slice:27 27 27 27;
-		border-image-width:27px 27px 27px 27px;
-		border-image-outset:0px 0px 0px 0px;
-		border-image-repeat:stretch stretch;
-	}
-	.media a {
-		color: #fff;
-	}
-
-</style>
 
 
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-$.noConflict();
-jQuery( document ).ready(function( $ ) {
-	$('.pop').on('click', function() {
-			//$('.imagepreview').attr('src', $(this).find('img').attr('src'));
-			$('#imagemodal').modal({show: true, focus: true});   
-		});	
-	$(".subscr").on('click',function(e) {
-		e.preventDefault();
-		var id = $(this).data('id');
-		$.ajax({
-			type: "POST",
-			url: "subscribe.php",
-			data: { 
-				id: <?= $row['id'] ?>, // < note use of 'this' here
-				subs_id: id
-			},
-			success: function(result) {
-				//alert('ok');
-				$('#'+id+'btn').attr("disabled","true");
-				$('#'+id+'btn').html("Подписки&nbsp<i class='fa fa-check-circle'></i>");
-			},
-			error: function(result) {
-				alert( id+'error');
-			}
-		});
-		window.location.href = $(this).data('target');
-	});	  
-});
-
-function myFunction() {
-  /* Get the text field */
-  var copyText = document.getElementById("myInput");
-
-  /* Select the text field */
-  copyText.disabled = false;
-  copyText.select();
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-  copyText.disabled = true;
-
-}
-</script>
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Профиль</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active"></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content mt-3">
-		<div class="animated fadeIn">
-                <div class="row">
-		<div class="col-lg-6 col-md-12">
-        <aside class="profile-nav alt">
-            <section class="card">
-                <div class="card-header user-header alt bg-fffff">
-                    <div class="media">
-                        
-                        <div class="media-body">
-							<h6 class="text-black display-6">Добро пожаловать!</h6>
-                            <h3 class="text-black display-6"><?= $show_row['fio'] ?></h3>
-                        </div>
-						
-						<div class="media-body">
-							<h6 class="text-black display-6">Режим инкогнито</h6>
-							<form method="post">
-								<div class="input-group">
-									<select class="form-select form-control" name="show">
-										<option <?=$hide_data[0]?> value="0">Включить</option>
-										<option <?=$hide_data[1]?> value="1">Отключить</option>
-									</select>
-									<button type="submit" class="btn btn-primary" name="action" value="show">Сохранить</button>
-								</div>
-							</form>
-                        </div>
-						
-                    </div>
-                </div>
-
-
-                
-					
-					
-					<li class="list-group-item" style="background: rgba(40, 167, 69, 1);">
-                        <i class="fa fa-calendar"style="font-size:18px;color:white"></i> <font color="White"> Дата активации </font> <span class="badge badge-secondary pull-right"><?= $show_row['reg_time'] ?></span>
-                    </li>
-                   <li class="list-group-item" style="background: rgba(40, 167, 69, 1);">
-                        <i class="fa fa-phone"style="font-size:18px;color:white"></i> <font color="White"> Номер телефона </font><span class="badge badge-secondary pull-right"><?= $show_row['phone'] ?></span>
-                    </li>
-					<li class="list-group-item" style="background: rgba(40, 167, 69, 1);">
-                        <i class="fa fa-star"style="font-size:18px;color:white"></i> <font color="White">Ваш Лидер </font><span class="badge badge-secondary pull-right"><?= $show_row['sponsor'] ?></span>
-                    </li>
-					<li class="list-group-item" style="background: rgba(40, 167, 69, 1);">
-                        <i class="fa fa-link"style="font-size:18px;color:white"></i> <font color="White"> Реферальнная ссылка </font> <input type="text" class="form-control pull-left" id="myInput" disabled value="http://bm-market.kz/Office/register.php?rel=<?= base64_encode($row['id']) ?>" />
-						<button type="button" class="btn btn-secondary" onclick="myFunction()"> Скопировать реферальную ссылку </button>
-						<br/>
-						
-						<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
-<script src="https://yastatic.net/share2/share.js"></script>
-
-                    </li>
-                    <li class="list-group-item" style="background: rgba(40, 167, 69, 1);">
-                        <i class="fa fa-location-arrow"style="font-size:18px;color:white"></i> <font color="White"> Местоположение </font> <span class="badge badge-secondary pull-right"><?= $show_row['city'] ?></span>
-                    </li>
-                    <li class="list-group-item" style="background: rgba(40, 167, 69, 1);">
-                        <a href="profile.php" style="color: black"> <i class="fa fa-cog"style="font-size:18px;color:white"></i> <font color="White"> Изменить профиль </font></a>
-						
-                    </li>
-                </ul>
-
-            </section>
-        </aside>
-    </div>
-<?php
-	$res_d = mysql_query("select * from m1 where sponsor_login='".$_SESSION['login']."'");
-	if ($row['login'] == 'drakula') {
-?>
-			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-				<div class="card" style="background: #55c912; color: white">
-                    <div class="card-body">
-						<h3>Компания Boom Market</h3><br>
-		<p style="color: white">УРА! УРА! УРА! УРА! УРА!</p>
-		<p style="color: white">ПРОМОУШЕН НА ЦИСТАНХЕ</p>
-		<p style="color: white">УВАЖАЕМЫЕ ПАРТНЕРЫ 🔥🔥🔥🔥🔥🔥🔥🔥🔥 СУПЕР ПРОМОУШЕН ДЛЯ НОВИЧКОВ И ДЛЯ ТЕХ ЛЮДЕЙ У КОГО НЕТУ НИ ОДНОГО ПАРТНЕРА</p>				
-		<p style="color: white">Кто закроет 1 ЭТАП( В ПОДАРОК  ПОЛУЧИТЕ ПРОДУКЦИЮ ЦИСТАНХЕ СРОК ПРОМОУШЕНА С 19.07.2020  14:00 часов ПО 20.07.2020 до 00:00 ВКЛЮЧИТЕЛЬНО</p>
-		<p style="color: white">С уважением администрация Boom Market</p>
-		<p style="color: white">( ВСЕГО 1 ДЕНЬ! ПРОДЛЕВАНИЕ НЕ БУДЕТ! ПРЕДУПРЕЖДАЕМ!)</p>
-					</div>
-				</div>
-			</div>
-<?php } ?>
-
-			<div class="col-lg-6 col-md-12">
-				<div class="card" style="background: #fffff; text-align: center">
+<div class="container">
+	<div class="main-body">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="card">
 					<div class="card-body">
-						<div class="stat-widget-one mb-2">
-							<div><i class=" text-success border-success"></i></div>
-							<div class="stat-content dib">
-								<div class="stat-text text-black"> </div>
-								<button type="button" class="btn btn-success" onclick=""> Пополнить баланс </button>
-								<div class="stat-digit text-black">Текущий баланс <?= $show_row['akwa'] ?></div>
-								<div class="stat-digit text-black">Бонусный баланс <?= $show_row['balans_turbo'] ?></div>
+						<div class="d-flex flex-column align-items-center text-center">
+							<img src="https://via.placeholder.com/110x110" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+							<div class="mt-3">
+								<h4><?= $show_row['fio'] ?></h4>
+								<p class="mb-1"></p>
+								<p class="font-size-sm"></p>
+								<a href="profile.php" class="btn btn-light">Изменить профиль</a>
 							</div>
 						</div>
+						<hr class="my-4">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+								<h6 class="mb-0">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe me-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+									Дата активации
+								</h6>
+								<span class="text-white"><?=$show_row['reg_time']?></span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+								<h6 class="mb-0">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github me-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+									Номер телефона
+								</h6>
+								<span class="text-white"><?=$show_row['phone']?></span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+								<h6 class="mb-0">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter me-2 icon-inline"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+									Ваш лидер
+								</h6>
+								<span class="text-white"><?=$show_row['sponsor']?></span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+								<h6 class="mb-0">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram me-2 icon-inline"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+									Местоположение
+								</h6>
+								<span class="text-white"><?=$show_row['city']?></span>
+							</li>
+						</ul>
 					</div>
 				</div>
-				
 			</div>
-			
+			<div class="col-lg-8">
+				<div class="card">
+					<div class="card-header">
+						<h6>Операции</h6>
+					</div>
+					<div class="card-body">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+								<h6 class="col-lg-4">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram me-2 icon-inline"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+									Режим инкогнито
+								</h6>
+								<form method="post" class="col-lg-8 w-100">
+									<div class="input-group">
+										<select class="form-select form-control" name="show">
+											<option <?=$hide_data[0]?> value="0">Включить</option>
+											<option <?=$hide_data[1]?> value="1">Отключить</option>
+										</select>
+										<button type="submit" class="btn btn-light" name="action" value="show">Сохранить</button>
+									</div>
+								</form>
+							</li>
+							<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+								<h6 class="col-lg-4">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram me-2 icon-inline"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+									Реферальнная ссылка
+								</h6>
+								<div class="block col-lg-8 d-flex">
+									<input type="text" class="form-control pull-left" id="myInput" disabled value="http://bm-market.kz/Office/register.php?rel=<?= base64_encode($row['id']) ?>" />
+									<button type="button" class="btn btn-light" onclick="myFunction()">Скопировать</button>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header d-flex justify-content-between align-items-center flex-wrap">
+						<h6>Баланс</h6>
+						<button type="button" class="btn btn-light" onclick="">Пополнить</button>
+					</div>
+					<div class="card-body">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+								<h6 class="col-lg-4">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram me-2 icon-inline"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+									Текущий баланс
+								</h6>
+								<span class="text-white"><?= $show_row['akwa'] ?> Тг.</span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+								<h6 class="col-lg-4">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram me-2 icon-inline"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+									Бонусный баланс
+								</h6>
+								<span class="text-white"><?= $show_row['balans_turbo'] ?> Тг.</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
+</div>
 
 <? include("footer.php"); ?>

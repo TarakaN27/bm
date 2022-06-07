@@ -1,4 +1,10 @@
-
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.disabled = false;
+  copyText.select();
+  document.execCommand("copy");
+  copyText.disabled = true;
+}
 
 jQuery(document).ready(function($) {
 
@@ -9,23 +15,6 @@ jQuery(document).ready(function($) {
 	} );
 
 	jQuery('.selectpicker').selectpicker;
-
-
-	$('#menuToggle').on('click', function(event) {
-		$('body').toggleClass('open');
-	});
-
-	$('.search-trigger').on('click', function(event) {
-		event.preventDefault();
-		event.stopPropagation();
-		$('.search-trigger').parent('.header-left').addClass('open');
-	});
-
-	$('.search-close').on('click', function(event) {
-		event.preventDefault();
-		event.stopPropagation();
-		$('.search-trigger').parent('.header-left').removeClass('open');
-	});
 	
 	$('#add-profile').on('click', function(event) {
 		event.preventDefault();
@@ -207,13 +196,6 @@ jQuery(document).ready(function($) {
 		}
 	})
 
-	// $('.user-area> a').on('click', function(event) {
-	// 	event.preventDefault();
-	// 	event.stopPropagation();
-	// 	$('.user-menu').parent().removeClass('open');
-	// 	$('.user-menu').parent().toggleClass('open');
-	// });
-	
 	$(".button-buyturbo").on("click", function(e){
 		e.preventDefault();
 		$.ajax({

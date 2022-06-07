@@ -154,9 +154,56 @@ if(!$my_fio){
 					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
 					<div class="menu-title">Мои партнеры</div>
 				</a>
-
-				<li class="menu-label">UI Elements</li>
-				
+				<a href="/Office/int_transfer.php">
+					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="menu-title">Внутренний перевод</div>
+				</a>
+				<a href="/Office/withdraw.php">
+					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="menu-title">Вывод Средств</div>
+				</a>
+				<a href="/Office/report.php">
+					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="menu-title">История</div>
+				</a>
+				<a href="/Office/buyTicket.php">
+					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="menu-title">Подарки компании</div>
+				</a>
+				<a href="/Office/mytickets.php">
+					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="menu-title">Мои билеты</div>
+				</a>
+				<? if($_SESSION["login"] === "BoomMarket"): ?>
+					<a href="/Office/persons.php">
+						<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+						<div class="menu-title">Статистика</div>
+					</a>
+					<a href="/Office/admin_history.php">
+						<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+						<div class="menu-title">Операции админов</div>
+					</a>
+				<? endif; ?>
+				<li class="menu-label">Аккаунт</li>
+				<a href="/Office/index.php">
+					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="menu-title">Профиль</div>
+				</a>
+				<? if($my_fio["role"] == 1): ?>
+					<a href="/Office/history_give_products.php">
+						<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+						<div class="menu-title">Получение товаров</div>
+					</a>
+				<? elseif($my_fio["role"] == 2 || $my_fio["role"] == 3): ?>
+					<a href="https://sklad.bm-market.kz/">
+						<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+						<div class="menu-title">Склад</div>
+					</a>
+				<? endif; ?>
+				<a href="/Office/logout.php">
+					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="menu-title">Выйти</div>
+				</a>				
 			</ul>
 			<!--end navigation-->
 		</div>
@@ -179,6 +226,69 @@ if(!$my_fio){
 				</nav>
 			</div>
 		</header>
+		
+		<div class="modal fade" id="buyTurbo" tabindex="-1" role="dialog" aria-labelledby="buyTurboLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="buyTurboLabel">Turbo Boom</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p style='color:#000'>Вы действительно хотите купить пакет?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+						<button type="button" class="button-buyturbo btn btn-primary">Купить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="modal fade" id="buyTypeMarketing" tabindex="-1" role="dialog" aria-labelledby="buyTypeMarketingLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="buyTypeMarketingLabel">Вид оплаты</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p style='color:#000'>Как вы хотите оплатить пакет?</p>
+						<a href="?sub_m1=Вход&pay_type=balans" class="btn btn-primary mt-4 px-10 py-5">Баланс</a>
+						<a href="?sub_m1=Вход&pay_type=bonus" class="btn btn-primary mt-4 px-10 py-5">Бонусы</a>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="buyTypeMulti" tabindex="-1" role="dialog" aria-labelledby="buyTypeMultiLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="buyTypeMultiLabel">Вид оплаты</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p style='color:#000'>Как вы хотите оплатить пакет?</p>
+						<a href="?sub_qq1=Вход&pay_type=balans" class="btn btn-primary mt-4 px-10 py-5">Баланс</a>
+						<a href="?sub_qq1=Вход&pay_type=bonus" class="btn btn-primary mt-4 px-10 py-5">Бонусы</a>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
 		<!--end header -->
 		<!--start page wrapper -->
 		<div class="page-wrapper">
