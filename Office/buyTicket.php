@@ -115,7 +115,7 @@ include('header.php');
 		<div class="row">
 			<div class="col-sm-6 m-auto mb-4">
 			<div class="card">
-				<div class="card-body px-0 col-sm-10 m-auto">
+				<div class="card-body col-sm-10 m-auto">
 					<? if(count($coupons_starts)>0): ?>
 					<form method="POST" class="buy-coupon">
 						<input type="hidden" name="id" value="<?=$_SESSION["id"]?>">
@@ -144,7 +144,7 @@ include('header.php');
 								<input type="number" max="" name="count" class="form-control w-100">
 							</div>
 							<div class="input-group w-100">
-								<input type="submit" class="btn btn-primary m-auto mt-4" value="Купить">
+								<input type="submit" class="btn btn-light m-auto w-100" value="Купить">
 							</div>
 						</div>
 					</form>

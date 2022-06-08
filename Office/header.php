@@ -49,12 +49,8 @@ if (is_file($_SERVER["DOCUMENT_ROOT"].'/Office/images/avatar/'.$_SESSION["id"].'
 		<!--sidebar wrapper -->
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
-				<div>
-					<img src="/Office/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-				</div>
-				<div>
-					<h4 class="logo-text">BM-market</h4>
-				</div>
+				<img src="/Office/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+				<h4 class="logo-text">BM-market</h4>
 			</div>
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
@@ -77,7 +73,7 @@ if (is_file($_SERVER["DOCUMENT_ROOT"].'/Office/images/avatar/'.$_SESSION["id"].'
 				?>
 				<li>
 					<a href="/Office/?action=outlogin" style="background-color: #6da671;border: 2px solid;color: #fff;">
-						<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+						<div class="parent-icon"><i class="bx bx-arrow-left"></i></div>
 						<div class="menu-title">Вернуться назад</div>
 					</a>
 				</li>
@@ -150,48 +146,48 @@ if (is_file($_SERVER["DOCUMENT_ROOT"].'/Office/images/avatar/'.$_SESSION["id"].'
 						</ul>
 					<? else: ?>
 						<a href="#" data-bs-toggle="modal" data-bs-target="#buyTurbo">
-							<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+							<div class="parent-icon"><i class="bx bx-home-circle"></i></div>
 							<div class="menu-title">Turbo Boom (Купить)</div>
 						</a>
 					<? endif; ?>
 				</li>
 				<a href="/Office/aktivnye.php">
-					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="parent-icon"><i class="lni lni-slideshare"></i></div>
 					<div class="menu-title">Мои партнеры</div>
 				</a>
 				<a href="/Office/int_transfer.php">
-					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="parent-icon"><i class="bx bx-transfer-alt"></i></div>
 					<div class="menu-title">Внутренний перевод</div>
 				</a>
 				<a href="/Office/withdraw.php">
-					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="parent-icon"><i class="lni lni-money-protection"></i></div>
 					<div class="menu-title">Вывод Средств</div>
 				</a>
 				<a href="/Office/report.php">
-					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="parent-icon"><i class="lni lni-library"></i></div>
 					<div class="menu-title">История</div>
 				</a>
 				<a href="/Office/buyTicket.php">
-					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="parent-icon"><i class="lni lni-gift"></i></div>
 					<div class="menu-title">Подарки компании</div>
 				</a>
 				<a href="/Office/mytickets.php">
-					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="parent-icon"><i class="lni lni-ticket"></i></div>
 					<div class="menu-title">Мои билеты</div>
 				</a>
 				<? if($_SESSION["login"] === "BoomMarket"): ?>
 					<a href="/Office/persons.php">
-						<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+						<div class="parent-icon"><i class="bx bx-chart"></i></div>
 						<div class="menu-title">Статистика</div>
 					</a>
 					<a href="/Office/admin_history.php">
-						<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+						<div class="parent-icon"><i class="bx bx-user"></i></div>
 						<div class="menu-title">Операции админов</div>
 					</a>
 				<? endif; ?>
 				<li class="menu-label">Аккаунт</li>
 				<a href="/Office/index.php">
-					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="parent-icon"><i class="bx bx-user-circle"></i></div>
 					<div class="menu-title">Профиль</div>
 				</a>
 				<? if($my_fio["role"] == 1): ?>
@@ -201,12 +197,12 @@ if (is_file($_SERVER["DOCUMENT_ROOT"].'/Office/images/avatar/'.$_SESSION["id"].'
 					</a>
 				<? elseif($my_fio["role"] == 2 || $my_fio["role"] == 3): ?>
 					<a href="https://sklad.bm-market.kz/">
-						<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+						<div class="parent-icon"><i class="bx bx-store"></i></div>
 						<div class="menu-title">Склад</div>
 					</a>
 				<? endif; ?>
 				<a href="/Office/logout.php">
-					<div class="parent-icon"><i class="bx bx-cookie"></i></div>
+					<div class="parent-icon"><i class="bx bx-log-out"></i></div>
 					<div class="menu-title">Выйти</div>
 				</a>				
 			</ul>

@@ -13,7 +13,7 @@ if($dev == 0) {
 	$db_database = "bmmarke1_dev";
 }*/
 
-$db_pass = 'root';
+$db_pass = '';
 $db_host = 'localhost';
 $db_user = 'root';
 $db_database = "bm";

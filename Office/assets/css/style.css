@@ -558,3 +558,7 @@ input.success {
 .google-visualization-orgchart-node-medium {
 	color:#000 !important;
 }
+
+.autocomplete {
+	background: #2f794b !important;
+}
